@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root "movies#index"
+
+  resources :movies
+  resources :users, only: [:edit, :update]
+  resources :rankings, only: [:create, :destroy]
+  resources :categories, except: [:edit, :update]
 end
