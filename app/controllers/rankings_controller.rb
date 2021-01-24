@@ -1,31 +1,23 @@
 class RankingsController < ApplicationController
-  before_action :set_ranking, only: [:destroy]
+  before_action :set_movie, only: [:create]
 
-  # POST /rankings
   def create
     @new_ranking = Ranking.new(ranking_params)
-    @ranking.user = current_user
+    @new_ranking.user = current_user
+    @new_ranking.movie = @movie
 
-    if @ranking.save
-      redirect_to @ranking, notice: 'Ranking was successfully created.'
+    if @new_ranking.save
+      redirect_to @movie, notice: 'Ranking was successfully created.'
     else
-      render :new
+      render 'movies/show'
     end
   end
 
-  # DELETE /rankings/1
-  def destroy
-    @ranking.destroy
-    redirect_to rankings_url, notice: 'Ranking was successfully destroyed.'
-  end
-
   private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_ranking
-    @ranking = Ranking.find(params[:id])
+  def set_movie
+    @movie = Movie.find(params[:movie_id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def ranking_params
     params.require(:ranking).permit(:mark)
   end

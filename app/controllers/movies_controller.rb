@@ -9,6 +9,7 @@ class MoviesController < ApplicationController
 
   # GET /movies/1
   def show
+    @new_ranking = @movie.rankings.build(params[:ranking])
   end
 
   # GET /movies/new

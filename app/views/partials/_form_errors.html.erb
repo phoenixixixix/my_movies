@@ -3,18 +3,18 @@
 <% if errors.any? %>
   <div class="alert alert-danger">
     <div class="lead mb-3">
-      <%= t('errors', count: errors.count) %>
+      In your form <%= errors.count %> errors
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
 
     <% errors.full_messages.each do |message| %>
-      <li class="errors_list">
-        <ul>
+      <ul class="errors_list">
+        <li>
           <%= message %>
-        </ul>
-      </li>
+        </li>
+      </ul>
     <% end %>
   </div>
 <% end %>

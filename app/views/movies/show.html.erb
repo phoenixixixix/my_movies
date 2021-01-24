@@ -15,3 +15,7 @@
     </div>
   </div>
 </div>
+
+<%= render partial: 'rankings/form', locals: { ranking: @new_ranking } %>
+
+<%= @movie.rankings.average(:mark).round(1) %>
