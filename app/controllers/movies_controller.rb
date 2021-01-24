@@ -4,6 +4,7 @@ class MoviesController < ApplicationController
   # GET /movies
   def index
     @movies = Movie.all
+    @categories = Category.all
   end
 
   # GET /movies/1
@@ -53,6 +54,6 @@ class MoviesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def movie_params
-    params.fetch(:movie, {})
+    params.require(:movie).permit(:title, :description)
   end
 end

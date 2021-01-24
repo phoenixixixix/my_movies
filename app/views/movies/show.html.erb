@@ -1,4 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<h1><%= @movie.title %></h1>
+<div class="row">
+  <div class="col-md-3">
+    <div class="row mb-3">
+      <%= render partial: 'movies/movie', object: @movie %>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <p><%= @movie.description %></p>
+    <div class="d-flex align-items-start flex-row bd-highlight">
+      Category:
+      <div class="category-item bg-dark rounded bd-highlight px-1 ml-1">
+        <%= link_to @movie.category.title, category_path(@movie.category) %>
+      </div>
+    </div>
+  </div>
+</div>

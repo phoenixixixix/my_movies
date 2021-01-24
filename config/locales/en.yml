@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+
+  errors:
+    one: 'In your form %{count} error'
+    other: 'In your form %{count} errors'

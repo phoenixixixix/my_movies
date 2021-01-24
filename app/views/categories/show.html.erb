@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<h1><%= @category.title %></h1>
+<div class="col-lg-9 pl-1">
+  <div class="row mb-3">
+    <%= render partial: 'movies/movie', collection: @category.movies %>
+  </div>
+</div>

@@ -3,7 +3,8 @@ class RankingsController < ApplicationController
 
   # POST /rankings
   def create
-    @ranking = Ranking.new(ranking_params)
+    @new_ranking = Ranking.new(ranking_params)
+    @ranking.user = current_user
 
     if @ranking.save
       redirect_to @ranking, notice: 'Ranking was successfully created.'
@@ -26,6 +27,6 @@ class RankingsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def ranking_params
-    params.fetch(:ranking, {})
+    params.require(:ranking).permit(:mark)
   end
 end

@@ -1,18 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :destroy]
 
-  # GET /categories
-  def index
-    @categories = Category.all
-  end
-
   # GET /categories/1
   def show
-  end
-
-  # GET /categories/new
-  def new
-    @category = Category.new
   end
 
   # POST /categories
@@ -40,6 +30,6 @@ class CategoriesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def category_params
-    params.fetch(:category, {})
+    params.require(:category).permit(:title)
   end
 end

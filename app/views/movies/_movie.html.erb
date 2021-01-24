@@ -1,0 +1,11 @@
+<div class="col-md-6 col-xl-4">
+  <div class="d-flex align-items-end align-self-end thumbnail mb-3">
+    <%= content_tag 'div', '', class: 'movie-background', style: "background-image: url(#{asset_path('movie.jpg')})" %>
+
+    <div class="flex-fill thumbnail-inner movie-info-inner">
+      <div class="movie-description text-center">
+        <h4><%= link_to movie.title, movie_path(movie) %></h4>
+      </div>
+    </div>
+  </div>
+</div>

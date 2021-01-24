@@ -20,3 +20,39 @@ File to import not found or unreadable: node_modules/bootstrap/scss/bootstrap.
 just added few ../ to the beginning
 */
 @import "../../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  font-family: Kalimati;
+  background: #0e0e0e;
+  color: #EFEFEF;
+}
+
+h1, h2 {
+  margin-top: 20px;
+}
+
+/* Navbar */
+.navbar-nav {
+  flex-direction: row;
+}
+
+.dropdown {
+  .dropdown-header {
+    color: #0e0e0e;
+  }
+}
+
+.navbar-nav .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Errors */
+.errors_list {
+  list-style-type: none;
+}
+
+.errors_list ul {
+  margin-left: 0;
+  padding-left: 0;
+}
