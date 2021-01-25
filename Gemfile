@@ -11,6 +11,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'uglifier', '~> 2.7', '>= 2.7.2'
 
 gem 'devise'
+gem 'activeadmin', '~> 2.8'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
