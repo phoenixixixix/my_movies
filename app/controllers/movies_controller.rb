@@ -15,6 +15,7 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
+    @movie.build_category
   end
 
   # GET /movies/1/edit
@@ -55,6 +56,6 @@ class MoviesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def movie_params
-    params.require(:movie).permit(:title, :description)
+    params.require(:movie).permit(:title, :description, :category_id, category_attributes: [:title])
   end
 end

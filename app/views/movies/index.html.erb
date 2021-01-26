@@ -1,3 +1,7 @@
+<% if current_user_admin? %>
+  <%= link_to 'Add Movie', new_movie_path, class: 'btn btn-primary mt-2' %>
+<% end %>
+
 <div class="row">
   <div class="col-lg-9">
     <h1>All Movies</h1>

@@ -1,17 +1,38 @@
-<%= form_with(model: movie, local: true) do |form| %>
-  <% if movie.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+<%= form_for @movie do |f| %>
+    <%= render "partials/form_errors", model: @movie %>
 
-      <ul>
-        <% movie.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="row">
+      <div class="col-md-6 mt-3">
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control'  %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :description, 'Description'%>
+          <%= f.text_area :description, size: "39x9", class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-6 mt-3">
+        <p>Enter category:</p>
+
+        <div class="form-group">
+          you can select from existing
+          <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]}, include_blank: true, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          or create new category
+          <%= check_box "enable", id:"enable", type:"checkbox" %>
+          (enter check box)
+
+          <%= f.fields_for :category do |a| %>
+            <%= a.text_field :title, disabled: true, class: 'form-control'%>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= f.submit 'Save', class: 'btn btn-primary' %>
 <% end %>
