@@ -1,10 +1,16 @@
 <%= form_for [@movie, ranking] do |f| %>
   <%= render "partials/form_errors", model: ranking %>
 
-  <%= f.label :mark, 'Select from existing' %>
-  <%= f.select :mark, (1..10).map {|m| [m,m]} %>
+  <div class="row">
+    <div class="col-sm-6 col-lg-3">
+      <div class="bg-dark rounded p-3 w-100">
+        <%= image_tag 'star-on.png' %>
+        <%= f.select :mark, (1..10).map {|m| [m,m]}, class: 'form-control' %>
 
-  <div class="actions">
-    <%= f.submit 'Rate this' %>
+        <div class="float-right">
+          <%= f.submit 'Rate this', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>

@@ -1,0 +1,54 @@
+.digg_pagination {
+  background: #0e0e0e;
+  cursor: default;
+  /* self-clearing method: */
+}
+
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
+  padding: 0.2em 0.5em;
+  display: block;
+  float: left;
+  margin-right: 1px;
+}
+
+.digg_pagination .disabled {
+  color: #897f3f;
+}
+
+.digg_pagination .current {
+  font-style: normal;
+  background: #ffbf00;
+  color: #0e0e0e;
+  border-radius: 5px;
+}
+
+.digg_pagination a {
+  text-decoration: none;
+  color: #ffbf00;
+}
+
+.digg_pagination a:hover, .digg_pagination a:focus {
+  color: #ffbf00;
+}
+
+.digg_pagination .page_info b {
+  color: #ffbf00;
+  background: #0e0e0e;
+  padding: 0.1em 0.25em;
+}
+
+.digg_pagination:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+* html .digg_pagination {
+  height: 1%;
+}
+
+*:first-child + html .digg_pagination {
+  overflow: hidden;
+}

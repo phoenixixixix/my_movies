@@ -32,6 +32,16 @@ h1, h2 {
   margin-top: 20px;
 }
 
+.actions {
+  a {
+    color: #ffbf00;
+  }
+
+  a:hover {
+    color: #b39223;
+  }
+}
+
 /* Navbar */
 .navbar-nav {
   flex-direction: row;

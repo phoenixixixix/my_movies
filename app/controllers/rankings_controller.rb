@@ -1,4 +1,5 @@
 class RankingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_movie, only: [:create]
 
   def create

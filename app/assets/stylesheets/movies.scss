@@ -60,16 +60,15 @@
 
 /* Thumbnails for movies/index */
 .thumbnail {
-  width: 250px;
-  height: 300px;
+  width: 270px;
+  height: 350px;
   position: relative;
   background: transparent;
   padding: 0;
   overflow: hidden;
-  border-radius: 5px;
 }
 
-.thumbnail h3 {
+.thumbnail h4 {
   white-space: nowrap;
   overflow: hidden;
   margin-top: 0;

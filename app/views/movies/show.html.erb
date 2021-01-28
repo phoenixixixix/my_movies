@@ -1,17 +1,28 @@
 <% if current_user_admin? %>
-  <%= link_to 'Edit current movie', edit_movie_path, class: 'btn btn-primary mt-2' %>
+  <%= link_to 'Edit current movie', edit_movie_path, class: 'btn btn-primary mb-1' %>
 <% end %>
 
-<h1><%= @movie.title %></h1>
+<% if @movie.rankings.exists? %>
+  <div class="row">
+    <div class="col">
+      <div class="d-flex flex-row align-items-center">
+        <div class="mr-3"><h1>Rating:</h1></div>
+        <div class="mr-3 pt-2"><%= image_tag 'star-on.png', width: '150%', height: '150%' %></div>
+        <div class="mr-3"><h1><%= average_ranking(@movie) %></h1></div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-lg-3">
     <div class="row mb-3">
       <%= render partial: 'movies/movie', object: @movie %>
     </div>
   </div>
   <div class="col-md-9">
     <p><%= @movie.description %></p>
-    <div class="d-flex align-items-start flex-row bd-highlight">
+    <div class="d-flex align-items-start flex-row bd-highlight mb-3">
       Category:
       <div class="category-item bg-dark rounded bd-highlight px-1 ml-1">
         <%= link_to @movie.category.title, category_path(@movie.category) %>
@@ -20,6 +31,6 @@
   </div>
 </div>
 
-<%= render partial: 'rankings/form', locals: { ranking: @new_ranking } %>
-
-<%= @movie.rankings.average(:mark) %>
+<div class="m-1">
+  <%= render partial: 'rankings/form', locals: { ranking: @new_ranking } %>
+</div>

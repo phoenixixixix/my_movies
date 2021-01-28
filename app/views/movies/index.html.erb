@@ -8,7 +8,14 @@
 
     <div class="row mb-3">
       <%# render array of movies, each in the 'movies/movie'  %>
-      <%= render partial: 'movies/movie', collection: @movies %>
+      <%= render @movies %>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="digg_pagination d-flex flex-fill justify-content-center">
+          <%= will_paginate @movies %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-lg-3">

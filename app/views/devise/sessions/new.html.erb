@@ -23,8 +23,8 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit 'Log in', class: 'btn btn-primary' %>
-        or <%= link_to 'sign up', new_registration_path(resource_name) %>
+        <%= f.submit 'Log in', class: 'btn btn-warning' %>
+        or <%= link_to 'sign up', new_registration_path(resource_name), class: 'devise-link' %>
       </div>
     <% end %>
   </div>

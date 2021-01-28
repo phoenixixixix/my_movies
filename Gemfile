@@ -13,6 +13,8 @@ gem 'uglifier', '~> 2.7', '>= 2.7.2'
 gem 'devise'
 gem 'activeadmin', '~> 2.8'
 
+gem 'will_paginate', '~> 3.1.1'
+
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
