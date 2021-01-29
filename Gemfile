@@ -18,8 +18,10 @@ gem 'will_paginate', '~> 3.1.1'
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 3.4'
-  gem 'factory_girl_rails'
+
+  gem 'rspec-rails', '~> 4.0.0'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
   gem 'shoulda-matchers'
 end
 

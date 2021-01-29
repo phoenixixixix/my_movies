@@ -1,5 +1,5 @@
-FactoryGirl.define do
-  factory :movies do
+FactoryBot.define do
+  factory :movie do
     association :category
 
     sequence(:title) { |n| "sometitle_#{n}"}

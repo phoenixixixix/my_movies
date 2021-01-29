@@ -1,5 +1,5 @@
-FactoryGirl.define do
-  factory :categories do
-    sequence(:title) { |n| "someguy_#{n}" }
+FactoryBot.define do
+  factory :category do
+    sequence(:title) { |n| "category_#{n}" }
   end
 end

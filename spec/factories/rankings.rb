@@ -1,5 +1,5 @@
-FactoryGirl.define do
-  factory :rankings do
+FactoryBot.define do
+  factory :ranking do
     association :user
     association :movie
 

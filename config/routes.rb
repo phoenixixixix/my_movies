@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :movies do
     resources :rankings, only: [:create]
   end
-  resources :categories, except: [:edit, :update, :new]
+  resources :categories, only: [:show]
 end
