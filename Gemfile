@@ -16,7 +16,7 @@ gem 'activeadmin', '~> 2.8'
 gem 'will_paginate', '~> 3.1.1'
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.4'
+  gem 'sqlite3', '~> 1.3', '>= 1.3.6'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'rspec-rails', '~> 4.0.0'
@@ -29,4 +29,8 @@ group :development do
   gem 'listen', '~> 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'pg', '~> 1.2', '>= 1.2.2'
 end

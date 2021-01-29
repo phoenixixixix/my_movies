@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_134051) do
+ActiveRecord::Schema.define(version: 2021_01_27_215234) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_134051) do
     t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "average_ranking", default: 0, null: false
     t.index ["category_id"], name: "index_movies_on_category_id"
     t.index ["title"], name: "index_movies_on_title", unique: true
   end
